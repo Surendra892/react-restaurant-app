@@ -1,0 +1,5 @@
+export const SET_TABLE_NUMBER = "SET_TABLE_NUMBER";
+export const RESET_TABLE_NUMBER = "RESET_TABLE_NUMBER";
+export const SET_FILTER_NAME = "SET_FILTER_NAME";
+export const PLACE_ORDER = "PLACE_ORDER";
+export const REMOVE_ORDER = "REMOVE_ORDER";
