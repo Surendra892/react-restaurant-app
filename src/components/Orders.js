@@ -17,13 +17,14 @@ const Orders = ({ ordered_items, removeOrderAction }) => {
   } else {
     total_amount = 0;
   }
+
   const RemoveClick = (id, name) => {
     window.confirm(` Confirm to remove : ${name}`) && removeOrderAction(id);
   };
-
   return (
     <>
       <Header pageName="Orders Page" />
+
       {cart_prize.length > 0 && (
         <div
           style={{
@@ -36,7 +37,7 @@ const Orders = ({ ordered_items, removeOrderAction }) => {
         </div>
       )}
       <center>
-        {ordered_items.length > 0 ? (
+        {ordered_items.length ? (
           <div className="container">
             <div className="row" style={{ padding: "5px" }}>
               {ordered_items.map((item) => (
@@ -82,4 +83,6 @@ const Orders = ({ ordered_items, removeOrderAction }) => {
 const mapStateToProps = (state) => ({
   ordered_items: state.orderReducer,
 });
-export default connect(mapStateToProps, { removeOrderAction })(Orders);
+export default connect(mapStateToProps, {
+  removeOrderAction,
+})(Orders);

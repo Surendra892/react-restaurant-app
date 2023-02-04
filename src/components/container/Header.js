@@ -8,12 +8,14 @@ const Header = ({ order_list, pageName }) => {
       <nav className="navbar navbar-light m-3 mt-1 bg-light border border-2 pe-2 ps-2">
         <a className="navbar-brand h2">Restaurant</a>
         <span className="h5 text-danger">{pageName}</span>
-        <button className="btn btn-primary">
-          <Link to="/orders" style={{ color: "white", textDecoration: "none" }}>
+        <Link to="/orders" style={{ color: "white", textDecoration: "none" }}>
+          <button className="btn btn-primary">
             Orders
-          </Link>
-          <span className="badge bg-light text-danger ms-1">{order_list}</span>
-        </button>
+            <span className="badge bg-light text-danger ms-1">
+              {order_list}
+            </span>
+          </button>
+        </Link>
       </nav>
     </center>
   );

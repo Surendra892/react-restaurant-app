@@ -8,6 +8,7 @@ export const orderReducer = (state = initialState, action) => {
       return [...state, payload];
     case REMOVE_ORDER:
       return state.filter((item) => item.id !== payload);
+
     default:
       return state;
   }

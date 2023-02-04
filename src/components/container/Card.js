@@ -6,6 +6,7 @@ import { ResetTblAction } from "../../Redux/ActionCreater/TableAction";
 const Card = ({ filter_name, table_number, orderAction, ResetTblAction }) => {
   const [data, setData] = useState([]);
   const [cloneData, setCloneData] = useState([]);
+
   useEffect(() => {
     fetch(
       "https://food-itema-default-rtdb.firebaseio.com/telugu-skillhub-api/-MsE8GfWtRjc8x_t8pCC.json"
@@ -19,7 +20,6 @@ const Card = ({ filter_name, table_number, orderAction, ResetTblAction }) => {
 
   useEffect(() => {
     if (filter_name != "All Items") {
-      console.log(filter_name);
       let specificData = cloneData.filter(
         (items) => items.category == filter_name
       );
@@ -31,6 +31,7 @@ const Card = ({ filter_name, table_number, orderAction, ResetTblAction }) => {
 
   const OrderClick = async (id, name, prize, url) => {
     if (table_number != null) {
+      id = id + Math.random();
       await orderAction(id, name, prize, url, table_number);
       await ResetTblAction();
       alert("Order Placed Successfully");
